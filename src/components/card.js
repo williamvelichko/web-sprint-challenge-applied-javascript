@@ -1,6 +1,5 @@
 import axios from "axios";
 const Card = (article) => {
-  console.log(article);
   const mainCard = document.createElement("div");
   const headlineElem = document.createElement("div");
   const authorElem = document.createElement("div");
@@ -17,8 +16,8 @@ const Card = (article) => {
   name.textContent = `By: ${article.authorName}`;
 
   mainCard.appendChild(headlineElem);
+  mainCard.appendChild(authorElem);
   authorElem.appendChild(imgContainer);
-  authorElem.appendChild(imgElem);
   authorElem.appendChild(name);
   imgContainer.appendChild(imgElem);
 
@@ -44,6 +43,7 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
+  return mainCard;
 };
 
 const cardAppender = (selector) => {
@@ -53,11 +53,14 @@ const cardAppender = (selector) => {
       const card1 = Card(resp.data.articles.javascript[0]);
       const card2 = Card(resp.data.articles.bootstrap[0]);
       const card3 = Card(resp.data.articles.technology[0]);
+      const card4 = Card(resp.data.articles.jquery[0]);
+      const card5 = Card(resp.data.articles.node[0]);
 
-      const selectorElem = document.querySelector(selector);
-      selectorElem.appendChild(card1);
-      selectorElem.appendChild(card2);
-      selectorElem.appendChild(card3);
+      document.querySelector(selector).appendChild(card1);
+      document.querySelector(selector).appendChild(card2);
+      document.querySelector(selector).appendChild(card3);
+      document.querySelector(selector).appendChild(card4);
+      document.querySelector(selector).appendChild(card5);
     })
     .catch((error) => {
       console.log(error);

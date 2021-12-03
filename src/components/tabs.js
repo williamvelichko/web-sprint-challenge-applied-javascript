@@ -1,10 +1,14 @@
 import axios from "axios";
+//import { NODE_SERVER_RESPONSE_TIME } from "msw/lib/types/context/delay";
+//import { node } from "webpack";
 
 const Tabs = (topics) => {
   const topicsBar = document.createElement("div");
   const jsBar = document.createElement("div");
   const bootstrapBar = document.createElement("div");
   const techBar = document.createElement("div");
+  const jqueryBar = document.createElement("div");
+  const nodeBar = document.createElement("div");
 
   topicsBar.classList.add("topics");
   jsBar.classList.add("tab");
@@ -13,10 +17,16 @@ const Tabs = (topics) => {
   bootstrapBar.textContent = topics.topics[1];
   techBar.classList.add("tab");
   techBar.textContent = topics.topics[2];
+  jqueryBar.classList.add("tab");
+  jqueryBar.textContent = topics.topics[3];
+  nodeBar.classList.add("tab");
+  nodeBar.textContent = topics.topics[4];
 
   topicsBar.appendChild(jsBar);
   topicsBar.appendChild(bootstrapBar);
   topicsBar.appendChild(techBar);
+  topicsBar.appendChild(jqueryBar);
+  topicsBar.appendChild(nodeBar);
 
   // TASK 3
   // ---------------------
