@@ -27,12 +27,17 @@ const Header = (title, date, temp) => {
   //    <span class="temp">{ temp }</span>
   //  </div>
   //
+
   return mainHeader;
 };
 
 const headerAppender = (selector) => {
-  const headMaker = document.querySelector(selector);
-  headMaker.appendChild(Header);
+  const headerElem = document.createElement("header");
+  headerElem.appendChild(
+    Header("Sprint challenge", "December 3, 2021", "76 degrees")
+  );
+  document.querySelector(selector).appendChild(headerElem);
+  //headMaker.appendChild(Header);
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.
