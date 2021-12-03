@@ -34,7 +34,7 @@ const Header = (title, date, temp) => {
 const headerAppender = (selector) => {
   const headerElem = document.createElement("header");
   headerElem.appendChild(
-    Header("Sprint challenge", "December 3, 2021", "76 degrees")
+    Header("BloomTech Times", "December 3, 2021", "76 degrees")
   );
   document.querySelector(selector).appendChild(headerElem);
   //headMaker.appendChild(Header);

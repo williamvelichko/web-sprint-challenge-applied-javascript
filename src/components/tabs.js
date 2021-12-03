@@ -44,8 +44,7 @@ const tabsAppender = (selector) => {
     })
     .catch((error) => {
       console.log(error);
-    })
-    .finally(() => console.log("wowowow"));
+    });
 
   // TASK 4
   // ---------------------
